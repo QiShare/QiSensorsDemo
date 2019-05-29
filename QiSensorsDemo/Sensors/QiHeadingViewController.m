@@ -1,27 +1,27 @@
 //
-//  QiAltitudeViewController.m
+//  QiHeadingViewController.m
 //  QiSensorsDemo
 //
-//  Created by huangxianshuai on 2019/5/27.
+//  Created by huangxianshuai on 2019/5/29.
 //  Copyright © 2019 QiShare. All rights reserved.
 //
 
-#import "QiAltitudeViewController.h"
+#import "QiHeadingViewController.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface QiAltitudeViewController () <CLLocationManagerDelegate>
+@interface QiHeadingViewController () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
 
 @end
 
-@implementation QiAltitudeViewController
+@implementation QiHeadingViewController
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     
-    self.title = @"海拔计";
+    self.title = @"方向传感器";
     
     _locationManager = [[CLLocationManager alloc] init];
     _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
@@ -33,14 +33,14 @@
     
     [super viewDidAppear:animated];
     
-    [_locationManager startUpdatingLocation];
+    [_locationManager startUpdatingHeading];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     
     [super viewDidDisappear:animated];
     
-    [_locationManager stopUpdatingLocation];
+    [_locationManager stopUpdatingHeading];
 }
 
 
@@ -48,16 +48,8 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
     
-    NSString *newHeadingString = [NSString stringWithFormat:@"x: %f\ny: %f\nz: %f", newHeading.x, newHeading.y, newHeading.z];
+    NSString *newHeadingString = [NSString stringWithFormat:@"trueHeading: %f\nmagneticHeading: %f\nheadingAccuracy: %f\nx: %f\ny: %f\nz: %f", newHeading.trueHeading, newHeading.magneticHeading, newHeading.headingAccuracy, newHeading.x, newHeading.y, newHeading.z];
     self.latestText = newHeadingString;
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    
-    CLLocation *location = locations.lastObject;
-    
-    NSString *locationString = [NSString stringWithFormat:@"altitude: %f\naccuracy: %f", location.altitude, location.verticalAccuracy];
-    self.latestText = locationString;
 }
 
 

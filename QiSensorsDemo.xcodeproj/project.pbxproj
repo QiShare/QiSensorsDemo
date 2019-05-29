@@ -22,6 +22,7 @@
 		06A7C180229BF38F00055E12 /* QiGravityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A7C17F229BF38F00055E12 /* QiGravityViewController.m */; };
 		06A7C183229BFA6900055E12 /* QiAltitudeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A7C182229BFA6900055E12 /* QiAltitudeViewController.m */; };
 		06A84465229CD67E00E08488 /* QiPedometerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06A84464229CD67E00E08488 /* QiPedometerViewController.m */; };
+		06C8AB95229E3C7A00108532 /* QiHeadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C8AB94229E3C7A00108532 /* QiHeadingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		06A7C182229BFA6900055E12 /* QiAltitudeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiAltitudeViewController.m; sourceTree = "<group>"; };
 		06A84463229CD67E00E08488 /* QiPedometerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiPedometerViewController.h; sourceTree = "<group>"; };
 		06A84464229CD67E00E08488 /* QiPedometerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiPedometerViewController.m; sourceTree = "<group>"; };
+		06C8AB93229E3C7A00108532 /* QiHeadingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiHeadingViewController.h; sourceTree = "<group>"; };
+		06C8AB94229E3C7A00108532 /* QiHeadingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiHeadingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				06A7C17F229BF38F00055E12 /* QiGravityViewController.m */,
 				06A7C181229BFA6900055E12 /* QiAltitudeViewController.h */,
 				06A7C182229BFA6900055E12 /* QiAltitudeViewController.m */,
+				06C8AB93229E3C7A00108532 /* QiHeadingViewController.h */,
+				06C8AB94229E3C7A00108532 /* QiHeadingViewController.m */,
 				06A7C169229BD23800055E12 /* QiProximityViewController.h */,
 				06A7C16A229BD23800055E12 /* QiProximityViewController.m */,
 				06A7C17B229BED4900055E12 /* QiBrightnessViewController.h */,
@@ -204,6 +209,7 @@
 				06A7C168229BCD3A00055E12 /* QiSensorViewController.m in Sources */,
 				06A84465229CD67E00E08488 /* QiPedometerViewController.m in Sources */,
 				06A7C177229BE4F600055E12 /* QiMagnetometerViewController.m in Sources */,
+				06C8AB95229E3C7A00108532 /* QiHeadingViewController.m in Sources */,
 				06A7C151229BC2E100055E12 /* AppDelegate.m in Sources */,
 				06A7C180229BF38F00055E12 /* QiGravityViewController.m in Sources */,
 			);

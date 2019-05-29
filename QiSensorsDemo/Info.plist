@@ -20,17 +20,19 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>始终定位</string>
 	<key>NSCameraUsageDescription</key>
 	<string>检测环境光</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>定位</string>
+	<string>始终定位+使用中定位</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>定位</string>
+	<string>使用中定位</string>
 	<key>NSMotionUsageDescription</key>
 	<string>计步器</string>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>audio</string>
+		<string>location</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

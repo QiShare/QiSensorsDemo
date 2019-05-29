@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) NSTimer *timer;
 
 @end
 
@@ -16,7 +20,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    _locationManager = [[CLLocationManager alloc] init];
+    _locationManager.allowsBackgroundLocationUpdates = YES;
+    _locationManager.showsBackgroundLocationIndicator = YES;
+    _locationManager.pausesLocationUpdatesAutomatically = NO;
+    _locationManager.distanceFilter = kCLDistanceFilterNone;
+    _locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    [_locationManager requestAlwaysAuthorization];
+    
     return YES;
 }
 
@@ -28,13 +40,23 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) {
+        NSLog(@"定位权限未开");
+    } else {
+        [_locationManager startUpdatingLocation];
+        _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            NSLog(@"timer is running on background.");
+        }];
+    }
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    
+    [_locationManager stopUpdatingLocation];
+    [_timer invalidate];
+    _timer = nil;
 }
 
 

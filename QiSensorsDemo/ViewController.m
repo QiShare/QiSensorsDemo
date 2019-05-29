@@ -21,7 +21,7 @@
     
     [super viewDidLoad];
     
-    _titles = @[@"陀螺仪", @"加速计", @"磁力计", @"重力计", @"海拔计", @"计步器", @"距离传感器", @"环境光传感器"];
+    _titles = @[@"陀螺仪", @"加速计", @"磁力计", @"重力计", @"海拔计", @"计步器", @"方向传感器", @"距离传感器", @"环境光传感器"];
     
     [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
 }
@@ -70,9 +70,12 @@
             [self performSegueWithIdentifier:@"showPedometer" sender:nil];
             break;
         case 6:
-            [self performSegueWithIdentifier:@"showProximity" sender:nil];
+            [self performSegueWithIdentifier:@"showHeading" sender:nil];
             break;
         case 7:
+            [self performSegueWithIdentifier:@"showProximity" sender:nil];
+            break;
+        case 8:
             [self performSegueWithIdentifier:@"showBrightness" sender:nil];
             break;
         default:
