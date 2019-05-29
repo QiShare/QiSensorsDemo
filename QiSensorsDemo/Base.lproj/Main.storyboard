@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ikL-4L-N7T">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--传感器-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="20" sectionFooterHeight="-1" estimatedSectionFooterHeight="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kq8-eK-mVR">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gZR-ft-ccC"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="ccY-Gb-IP7"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Kq8-eK-mVR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SKE-ar-kkB"/>
+                            <constraint firstItem="Kq8-eK-mVR" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hC7-VR-eNb"/>
+                            <constraint firstItem="Kq8-eK-mVR" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lnC-AH-mMj"/>
+                            <constraint firstItem="Kq8-eK-mVR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sru-zE-Yxt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="传感器" id="SJH-F1-p5N"/>
+                    <connections>
+                        <outlet property="tableView" destination="Kq8-eK-mVR" id="zBL-xx-RLs"/>
+                        <segue destination="gof-G8-Tzz" kind="show" identifier="showProximity" id="0eO-5q-2w0"/>
+                        <segue destination="q9S-Iq-GNk" kind="show" identifier="showAccelerometer" id="dqB-in-MC5"/>
+                        <segue destination="DBA-sU-Z46" kind="show" identifier="showMagnetometer" id="oAm-RW-c0a"/>
+                        <segue destination="HyY-9m-iHS" kind="show" identifier="showGyro" id="va4-0b-74d"/>
+                        <segue destination="3ZG-c2-CG3" kind="show" identifier="showBrightness" id="4H4-lk-3sq"/>
+                        <segue destination="c7z-Mw-xU6" kind="show" identifier="showGravity" id="COh-yP-cLB"/>
+                        <segue destination="7vq-Un-Hpr" kind="show" identifier="showAltitude" id="0vW-AN-CEa"/>
+                        <segue destination="hSj-3O-8Vu" kind="show" identifier="showPedometer" id="lRa-3X-0ni"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905.79710144927549" y="783.48214285714278"/>
+        </scene>
+        <!--Qi Gravity View Controller-->
+        <scene sceneID="hPq-OK-VhA">
+            <objects>
+                <viewController id="c7z-Mw-xU6" customClass="QiGravityViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vee-lZ-o5M">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="sAe-Rq-ML2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MrC-zR-soT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-668" y="1585"/>
+        </scene>
+        <!--Qi Brightness View Controller-->
+        <scene sceneID="pj5-xT-agE">
+            <objects>
+                <viewController id="3ZG-c2-CG3" customClass="QiBrightnessViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sqb-Zo-fAL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="qob-aY-gNe"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ekA-MR-ejC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2644" y="1585"/>
+        </scene>
+        <!--Qi Altitude View Controller-->
+        <scene sceneID="xin-vO-gEL">
+            <objects>
+                <viewController id="7vq-Un-Hpr" customClass="QiAltitudeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cuM-kQ-Phf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6Gs-hL-gfX"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="maK-nA-Iey" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1324" y="1585"/>
+        </scene>
+        <!--Qi Pedometer View Controller-->
+        <scene sceneID="Omx-Sg-ny1">
+            <objects>
+                <viewController id="hSj-3O-8Vu" customClass="QiPedometerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mJy-S2-ZAD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UtX-9b-V6d"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dR3-hk-Tfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3300" y="1585"/>
+        </scene>
+        <!--Qi Accelerometer View Controller-->
+        <scene sceneID="SfY-3n-DzZ">
+            <objects>
+                <viewController id="q9S-Iq-GNk" customClass="QiAccelerometerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p8W-va-7sU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="QK0-aO-WBF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BLK-oW-Wmb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="653" y="1585"/>
+        </scene>
+        <!--Qi Magnetometer View Controller-->
+        <scene sceneID="p70-hY-fhw">
+            <objects>
+                <viewController id="DBA-sU-Z46" customClass="QiMagnetometerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BPf-fk-t1M">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Bjt-Db-f1e"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FGE-iG-mOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1320" y="1585"/>
+        </scene>
+        <!--Qi Gyro View Controller-->
+        <scene sceneID="Fh4-Oa-DgJ">
+            <objects>
+                <viewController id="HyY-9m-iHS" customClass="QiGyroViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5OY-Mm-zd3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="5Hh-0V-ESc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cl4-GJ-UGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1982" y="1585"/>
+        </scene>
+        <!--Qi Proximity View Controller-->
+        <scene sceneID="1YY-eN-7PQ">
+            <objects>
+                <viewController id="gof-G8-Tzz" customClass="QiProximityViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ael-8h-5MJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Pdp-Qf-3ep"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QfI-X8-mBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-13" y="1585"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lls-ch-9XR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ikL-4L-N7T" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xd2-sV-Zod">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="59h-DY-qf7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H9g-yS-MkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173.91304347826087" y="783.48214285714278"/>
+        </scene>
+    </scenes>
+</document>
